@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Neuralnsight</title>
+        <link rel="stylesheet" href="../static/css/styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
+
+    </head>
+    <body>
+        <div class="main-page">
+            <!-- HEADER -->
+            <nav class="navbar navbar-expand-sm">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-bold fs-2" href="#">
+                         <img src="../static/images/brain-icon.svg" alt="Logo" width="36" height="32" class="d-inline-block align-text-top">
+                         Neuralnsight
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mx-auto mb-2 mx-3 mb-lg-0 fw-semibold fs-5">
+                          <li><a href="#" class="nav-link px-2 text-black">Home</a></li>
+                          <li><a href="#specs" class="nav-link px-2">Specs</a></li>
+                          <li><a href="#model" class="nav-link px-2">Model</a></li>
+                          <li><a href="#about" class="nav-link px-2">About Us</a></li>
+                      </ul>
+                      <button class="btn btn-outline-secondary" type="button"><a href="BTD/projectdetails.html" class="nav-link px-2" target="_blank">Project Details</a></button>
+                    </div>
+                </div>
+            </nav>
+            <!-- HERO -->
+            <div class="container-fluid mt-5">
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                  <div class="col-lg-6">
+                    <img src="../static/images/brain_cartoon.jpg" class="d-block mx-lg-auto img-fluid rounded-3" alt="Brain Image" width="600px" loading="lazy">
+                  </div>
+                  <div class="col-lg-6">
+                    <p class="fw-semibold tc fs-3 mb-4">Proudly Presenting Neuralnsight: </p>
+                    <h1 class="display-3 fw-bold text-body-emphasis lh-2 mb-4">Pioneering the Future of Brain Wellness</h1>
+                    <p class="lead mb-4">Unseen, Unheard, Undetected: The silent peril of brain tumors claims lives daily. Let's raise awareness, save lives.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                      <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" style="background-color: #4d4dff" ><a href="#model" class="nav-link px-2">Test</a></button>
+                      <button type="button" class="btn btn-outline-secondary btn-lg px-4"><a href="#specs" class="nav-link px-2">Specs</a></button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <!-- MODEL SPECS -->
+            <div class="container my-5" id="specs">
+                <h2 class="text-center text-capitalize pt-4 fw-bold">Model Specifications</h2>
+                <div class="row text-center">
+                    <div class="col fs-5 p-3 mx-5">
+                        <p>This brain tumor detection model is built on a state-of-the-art neural network architecture, leveraging deep learning techniques to analyze complex patterns within medical images.
+                            Below are some Training Details :</p>
+                    </div>
+                </div>
+                <div class="row row-cols-4 text-center">
+                  <div class="col">
+                    <div class="card1 bg-light text-dark p-3 mx-4">
+                        <p class="tc fs-2 fw-semibold mb-0">10</p>
+                        <p class="fw-semibold">Epochs</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                      <div class="card1 bg-light text-dark p-3 mx-4">
+                          <p class="tc fs-2 fw-semibold mb-0">97%</p>
+                          <p class="fw-semibold">Accuracy</p>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="card1 bg-light text-dark p-3 mx-4">
+                          <p class="tc fs-2 fw-semibold mb-0">High</p>
+                          <p class="fw-semibold">Precision</p>
+                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="card1 bg-light text-dark p-3 mx-4">
+                        <p class="tc fs-2 fw-semibold mb-0">Br35H</p>
+                        <p class="fw-semibold">Dataset</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- MODEL -->
+            <div class="container my-5" id="model">
+              <h2 class="text-center text-capitalize pt-4 fw-bold">Add MRI Scan Image</h2>
+              <div class="hero my-5">
+                  <form id="upload-file" method="post" enctype="multipart/form-data">
+                    <label for="input-file" id="drop-area">
+                        <input type="file" name="file" accept="image/*" id="input-file" hidden>
+                        <div id="img-view">
+                            <img src="../static/images/icon.png">
+                            <p>Drag and drop or click here<br>to upload image</p>
+                            <span>Upload any images from desktop</span>
+                        </div>
+                    </label>
+                    <div>
+                        <button type="button" id="uploadButton" class="btn btn-primary mx-auto" style="display: none;background-color: #4d4dff;">Check for Brain Tumor</button>
+                    </div>
+                  </form>
+                  <div class="loader" style="display:none;"></div>
+                    <h3 id="result">
+                        <span> </span>
+                    </h3>
+                </div>
+            </div>
+
+            <!-- ABOUT US -->
+            <div class="container" id="about">
+                  <h1 class="text-center text-capitalize pt-4 fw-bold">About Us</h1>
+                <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center mb-2 p-3">
+                  <div class="col-12 col-lg-6 col-xl-5">
+                    <img class="img-fluid rounded" loading="lazy" src="../static/images/brain.png" alt="About Us">
+                  </div>
+                  <div class="col-12 col-lg-6 col-xl-7">
+                    <div class="row justify-content-xl-center">
+                      <div class="col-12 col-xl-11 about-us">
+                        <h3 class="mb-3">Empowering Healthcare Through Advanced AI Solutions</h3>
+                        <p class="mb-5" style="line-height: 1.6">Our team at Neuralnsight is dedicated to revolutionizing brain tumor detection through cutting-edge Machine Learning (ML) and Deep Learning (DL) technologies. With a passion for innovation and a commitment to improving healthcare, we are driven to develop accurate and accessible solutions that empower medical professionals and benefit patients worldwide.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- FOOTER -->
+            <div class="container">
+              <footer class="py-3 my-4">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                  <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+                  <li class="nav-item"><a href="#specs" class="nav-link px-2 text-body-secondary">Specs</a></li>
+                  <li class="nav-item"><a href="#model" class="nav-link px-2 text-body-secondary">Model</a></li>
+                  <li class="nav-item"><a href="#about" class="nav-link px-2 text-body-secondary">About Us</a></li>
+                </ul>
+                <p class="text-center text-body-secondary">&copy; Neuralnsight 2024 </p>
+              </footer>
+            </div>
+        </div>
+        <script src="../static/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>
